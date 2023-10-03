@@ -1,7 +1,8 @@
-// background.js
-chrome.action.onClicked.addListener((tab) => {
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    files: ["contentScript.js"],
-  });
-});
+// get message
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  console.log(request);
+  if (request.message === "decrement_count") {
+    console.log("not added");
+  }
+}
+);
